@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Christophe Mbadu · Développeur fullstack</title>
-<meta name="description" content="Portfolio de Christophe Mbadu, développeur fullstack basé à Kinshasa. JobSwipe, une application de recherche d'emploi par swipe.">
+<meta name="description" content="Portfolio de Christophe Mbadu, développeur fullstack basé à Kinshasa. JobSwipe, une appli de recherche d'emploi par swipe, et Loba, une appli pour apprendre le lingala.">
 <meta name="theme-color" content="#EDEAE3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121317" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Christophe Mbadu · Développeur fullstack">
-<meta property="og:description" content="Portfolio de Christophe Mbadu, développeur fullstack basé à Kinshasa. JobSwipe, une application de recherche d'emploi par swipe.">
+<meta property="og:description" content="Portfolio de Christophe Mbadu, développeur fullstack basé à Kinshasa. JobSwipe, une appli de recherche d'emploi par swipe, et Loba, une appli pour apprendre le lingala.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2315161A'/%3E%3Ctext x='32' y='43' font-family='monospace' font-size='30' font-weight='700' text-anchor='middle' fill='%23ECEAE4'%3ECM%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400..600&display=swap">
 <style>
-/* Concept : scroll narratif. Un ordinateur portable vide se branche, se réveille et s'amuse, puis le portfolio s'ouvre. */
+/* Concept : scroll narratif. Des points dessinent des mots (lingala, français, anglais, puis les projets), puis le portfolio s'ouvre. */
 :root{
   --paper:#EDEAE3;
   --paper2:#FBFAF7;
@@ -71,9 +71,9 @@ a{color:inherit}
 .unit .live,.live{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--ok);margin-right:9px;vertical-align:1px;animation:pulse 2.2s ease-in-out infinite}
 @keyframes pulse{50%{opacity:.3}}
 
-/* intro : ordinateur portable */
+/* intro : mots en particules */
 :root{--sh:clamp(540px,calc(86svh - 24px),760px)}
-.track{height:calc(var(--sh) + 170svh)}
+.track{height:calc(var(--sh) + 190svh)}
 .stage{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--barh,46px));height:var(--sh);overflow:hidden;display:flex;flex-direction:column;gap:8px}
 .hero-copy{padding-top:14px}
 .hero-copy .mono{color:var(--muted);margin:0 0 10px}
@@ -81,24 +81,9 @@ h1{font-family:var(--display);font-weight:600;font-size:clamp(38px,6.6vw,80px);l
 h1 em{font-style:normal;color:var(--blue)}
 .hero-copy p.lead{margin:14px 0 0;font-size:clamp(16px,1.8vw,20px);max-width:38ch}
 .lapbox{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
-.lap3d{position:absolute;inset:0;width:100%;height:100%;display:block}
-#lapSvg{width:100%;height:100%;max-height:100%;overflow:visible;display:block}
 .stagebar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);padding-bottom:6px}
 .stagebar a{text-decoration:none;border-bottom:1px solid var(--muted)}
 .stagebar a:hover{color:var(--blue);border-color:var(--blue)}
-/* dessin du portable */
-.body{fill:var(--paper);stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
-.cab{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round}
-.fs{fill:var(--screen)}.fs2{fill:var(--screen2)}.fi{fill:var(--screen-ink)}
-.fb{fill:var(--screen-blue)}.fo{fill:var(--screen-orange)}.fr{fill:var(--screen-red)}.fg{fill:var(--screen-green)}
-.fink{fill:var(--ink)}.fline{fill:var(--line)}
-.st{font-family:var(--mono);font-size:15px;letter-spacing:.06em;fill:var(--screen-ink)}
-.st.dim{fill:var(--screen-ink);opacity:.6;font-size:13px}
-.sym{font-family:var(--mono);font-weight:500;font-size:22px}
-.key{fill:var(--line)}
-.key.lit{fill:var(--orange)}
-.key.lit2{fill:var(--blue)}
-
 /* sections */
 section{border-top:1px solid var(--line)}
 html{scroll-snap-type:y proximity}
@@ -237,8 +222,6 @@ footer{padding-top:28px;border-top:1px solid var(--line);color:var(--muted);disp
 /* ---- inspiré de jidekel.com : instrument, étiquettes techniques, masques ---- */
 .unitrow{display:flex;justify-content:space-between;gap:4px 16px;flex-wrap:wrap}
 .unitrow b,#unit{font-weight:500;color:var(--ink)}
-#unit[data-s="0"]{color:var(--orange)}
-#unit[data-s="2"],#unit[data-s="3"]{color:var(--blue)}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em 0 .16em;margin:-.06em 0 -.16em}
 .w>span{display:inline-block;transition:transform 1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i,0)*70ms + 120ms)}
 h1.rv:not(.in) .w>span,.page.pre h2 .w>span{transform:translateY(112%)}
@@ -271,6 +254,55 @@ h1.rv:not(.in) .w>span,.page.pre h2 .w>span{transform:translateY(112%)}
 .cur span{position:absolute;left:18px;top:14px;font:500 9.5px/1 var(--mono);letter-spacing:.14em;white-space:nowrap;opacity:0;transition:opacity .3s}
 .cur.mv span{opacity:.85}
 
+/* ---- intro : mots en particules ---- */
+.lapbox canvas{position:absolute;inset:0;width:100%;height:100%;display:block;cursor:crosshair;touch-action:pan-y}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.stagebar{align-items:flex-end}
+#phase{flex:1 1 220px;min-width:0}
+.wordin{display:inline-flex;align-items:center}
+.wordin input{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--muted);border-radius:0;padding:4px 2px;width:11.5em;min-height:28px;outline-offset:4px}
+.wordin input::placeholder{color:var(--muted);opacity:1}
+.wordin input:hover{border-color:var(--ink)}
+.wordin input:focus{border-color:var(--blue);outline:none}
+.wordin input:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+@media (pointer:coarse){.wordin input{font-size:16px;min-height:40px;letter-spacing:.04em;width:9em}}
+@media (max-width:560px){.stagebar{gap:6px 12px}#phase{flex-basis:100%}}
+#unit[data-s="0"]{color:var(--orange)}
+#unit[data-s="3"],#unit[data-s="5"]{color:var(--blue)}
+
+/* ---- projets : onglets ---- */
+.phead{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 32px;flex-wrap:wrap;margin:0 0 26px}
+.phead h2{margin:0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 4px}
+.tab{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:99px;padding:8px 18px;min-height:40px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.tab:hover{border-color:var(--blue);color:var(--blue)}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab[aria-selected="true"]:hover{color:var(--paper)}
+.tab .n{opacity:.6;margin-left:8px}
+.pname{margin:0 0 14px;max-width:none}
+.pmeta{margin:0 0 18px;color:var(--muted)}
+.tabpanel[hidden]{display:none!important}
+.tabpanel>.cols{animation:tabin .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes tabin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.tabpanel>.cols{animation:none}}
+#reseaux p a{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:3px}
+#reseaux p a:hover{color:var(--blue)}
+
+/* ---- loba : mini-leçon ---- */
+a.pill{text-decoration:none}
+a.pill:hover{background:var(--blue);border-color:var(--blue);color:var(--paper)}
+.lcard{width:min(380px,100%);border:1.5px solid var(--ink);border-radius:22px;background:var(--paper);padding:18px;display:flex;flex-direction:column;gap:10px}
+.lbar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.lbar i{display:block;height:100%;width:0;background:var(--blue);border-radius:99px;transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.lq{font-family:var(--display);font-weight:600;font-size:clamp(22px,3vw,28px);letter-spacing:-.03em;line-height:1.1;margin:4px 0 0}
+.lopts{display:grid;gap:8px}
+.lopt{font:inherit;font-size:18px;text-align:left;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:14px;padding:9px 16px;min-height:46px;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.lopt:hover:not(:disabled){border-color:var(--blue);color:var(--blue)}
+.lopt:disabled{cursor:default}
+.lopt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--paper));color:var(--ink)}
+.lopt.bad{border-color:var(--orange);background:color-mix(in srgb,var(--orange) 14%,var(--paper));color:var(--ink)}
+.lfb{margin:0;min-height:2.6em;font-size:15px;line-height:1.45;color:var(--muted)}
+
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;scroll-snap-type:none}.sheet,.ffront{transition:none}.page>*{transform:none!important;opacity:1!important}.bgd i{transform:none!important}.w>span{transition:none}h1.rv:not(.in) .w>span,.page.pre h2 .w>span{transform:none}.live{animation:none}.links a,.btn,.themebtn{transition:none;transform:none}.cur{display:none}}
 </style>
 </head>
@@ -279,10 +311,10 @@ h1.rv:not(.in) .w>span,.page.pre h2 .w>span{transform:translateY(112%)}
   <div class="wrap">
     <span class="mono unit"><i class="live" aria-hidden="true"></i>Christophe Mbadu <span class="muted">· Développeur fullstack</span></span>
     <nav class="mono" aria-label="Navigation">
-      <a href="#projet">Projet</a>
+      <a href="#projets">Projets</a>
       <a href="#stack">Stack</a>
       <a href="#langages">Langages</a>
-      <a href="#ecrits">Écrits</a>
+      <a href="#reseaux">Réseaux</a>
       <a href="#contact">Contact</a>
       <button class="themebtn" id="themeBtn" type="button" aria-label="Passer en thème sombre"><svg id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"></svg><span id="themeTxt">Sombre</span></button>
     </nav>
@@ -293,9 +325,9 @@ h1.rv:not(.in) .w>span,.page.pre h2 .w>span{transform:translateY(112%)}
   <div class="track" id="track">
     <div class="stage" id="stage">
       <div class="hero-copy">
-        <p class="mono unitrow"><span>CM-001 · <b id="unit" data-s="0">Batterie faible</b></span><span>Fait main · Kinshasa, CD</span></p>
+        <p class="mono unitrow"><span>CM-001 · <b id="unit" data-s="0">Lingala</b></span><span>Fait main · Kinshasa, CD</span></p>
         <h1>Salut, je suis <em>Christophe.</em></h1>
-        <p class="lead">Développeur fullstack. Je crée JobSwipe, une appli qu'on prend en main en un geste.</p>
+        <p class="lead">Développeur fullstack. Je crée JobSwipe et Loba, des applis qu'on prend en main sans effort.</p>
       </div>
 <script>
 /* découpe un titre en mots pour l'apparition en masque */
@@ -328,74 +360,11 @@ window.splitWords=function(h){
 })();
 </script>
       <div class="lapbox" id="lapbox">
-        <svg id="lapSvg" viewBox="0 0 880 480" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Un ordinateur portable à la batterie vide. En faisant défiler la page, son chargeur se branche, il se recharge, puis il s'amuse.">
-          <defs><clipPath id="scr"><rect x="226" y="56" width="428" height="268" rx="8"/></clipPath></defs>
-          <g id="zoom">
-            <ellipse cx="440" cy="448" rx="340" ry="12" class="fline"/>
-            <g id="lap">
-              <rect class="body" x="210" y="40" width="460" height="314" rx="18"/>
-              <rect class="fs" x="226" y="56" width="428" height="268" rx="8"/>
-              <g clip-path="url(#scr)">
-                <g id="sBat">
-                  <g transform="translate(380 140)">
-                    <rect x="0" y="0" width="108" height="52" rx="9" fill="none" stroke="var(--screen-ink)" stroke-width="4"/>
-                    <rect x="112" y="16" width="8" height="20" rx="3" class="fi"/>
-                    <rect id="batFill" x="7" y="7" width="8" height="38" rx="4" class="fr"/>
-                  </g>
-                  <text id="batTxt" x="440" y="236" text-anchor="middle" class="st">3 %</text>
-                  <text id="batMsg" x="440" y="262" text-anchor="middle" class="st dim">Batterie faible</text>
-                </g>
-                <g id="sDesk" opacity="0">
-                  <rect x="226" y="56" width="428" height="268" class="fs2"/>
-                  <rect x="226" y="56" width="428" height="20" class="fs"/>
-                  <circle cx="242" cy="66" r="4" class="fr"/><circle cx="256" cy="66" r="4" class="fo"/><circle cx="270" cy="66" r="4" class="fg"/>
-                  <text id="y1" class="sym fb">&lt;/&gt;</text>
-                  <text id="y2" class="sym fo">{ }</text>
-                  <text id="y3" class="sym fg">=&gt;</text>
-                  <text id="y4" class="sym fb">( )</text>
-                  <g transform="translate(440 168)">
-                    <g id="eyes">
-                      <rect x="-66" y="-30" width="44" height="52" rx="22" class="fi"/>
-                      <rect x="22" y="-30" width="44" height="52" rx="22" class="fi"/>
-                      <circle id="pupL" cx="-44" cy="-4" r="10" class="fs"/>
-                      <circle id="pupR" cx="44" cy="-4" r="10" class="fs"/>
-                    </g>
-                    <path id="mouth" d="M-34 52 Q0 54 34 52" fill="none" stroke="var(--screen-orange)" stroke-width="6" stroke-linecap="round"/>
-                  </g>
-                  <text id="typed" x="440" y="288" text-anchor="middle" class="st"></text>
-                </g>
-              </g>
-              <circle cx="440" cy="48" r="2.2" class="fink"/>
-              <path class="body" d="M210 354 L670 354 L730 396 L150 396 Z"/>
-              <rect class="body" x="150" y="396" width="580" height="12" rx="6"/>
-              <g id="keys"></g>
-              <rect x="725" y="399" width="9" height="6" rx="1.5" class="fink"/>
-              <circle id="led" cx="721" cy="402" r="2.6" class="fr"/>
-            </g>
-            <g id="brick">
-              <rect x="852" y="418" width="40" height="58" rx="6" class="fline"/>
-              <rect x="842" y="436" width="12" height="5" class="fink"/><rect x="842" y="452" width="12" height="5" class="fink"/>
-              <rect x="792" y="424" width="52" height="46" rx="9" class="body"/>
-              <circle id="brickLed" cx="806" cy="438" r="3" class="fline"/>
-            </g>
-            <path id="cable" class="cab" d="M792 447 C760 480 740 470 690 466"/>
-            <g id="plug">
-              <rect x="0" y="-7" width="30" height="14" rx="4" class="body" style="stroke-width:2.5"/>
-              <rect x="-9" y="-4" width="10" height="8" rx="1.5" class="fink"/>
-            </g>
-            <g id="spark" opacity="0" transform="translate(731 402)">
-              <g stroke="var(--orange)" stroke-width="3" stroke-linecap="round">
-                <line x1="8" y1="0" x2="26" y2="0"/><line x1="-8" y1="0" x2="-26" y2="0"/>
-                <line x1="0" y1="-8" x2="0" y2="-24"/><line x1="0" y1="8" x2="0" y2="22"/>
-                <line x1="6" y1="6" x2="18" y2="18"/><line x1="-6" y1="-6" x2="-18" y2="-18"/>
-                <line x1="6" y1="-6" x2="18" y2="-18"/><line x1="-6" y1="6" x2="-18" y2="18"/>
-              </g>
-            </g>
-          </g>
-        </svg>
+        <canvas id="wordCv" role="img" aria-label="Animation : un mot dessiné avec des points bleus et orange, qui change quand tu fais défiler."></canvas>
       </div>
-      <div class="stagebar mono" aria-hidden="false">
-        <span id="phase" aria-hidden="true">Batterie faible. Fais défiler pour brancher le chargeur ↓</span>
+      <div class="stagebar mono">
+        <span id="phase" aria-hidden="true">Mbote · bonjour en lingala ↓</span>
+        <label class="wordin"><span class="sr">Écris un mot, il se dessine en points</span><input id="wordIn" type="text" maxlength="10" placeholder="Écris un mot…" autocomplete="off" spellcheck="false" enterkeyhint="done"></label>
         <a href="#apropos">Passer l'intro</a>
       </div>
     </div>
@@ -413,41 +382,77 @@ window.splitWords=function(h){
       </div>
       <div>
         <p>Je suis développeur fullstack, basé à Kinshasa. J'ai fait mes études de programmation web à <a href="https://www.teccart.qc.ca/" target="_blank" rel="noopener">Teccart</a>, à Montréal.</p>
-        <p>Je crée JobSwipe, une application mobile qui rend la recherche d'emploi aussi simple qu'un swipe.</p>
+        <p>Je crée JobSwipe, une application mobile qui rend la recherche d'emploi aussi simple qu'un swipe. Je construis aussi Loba, une application façon Duolingo pour apprendre le lingala.</p>
         <p>Je partage ce que j'apprends en chemin sur LinkedIn, en français, pour les développeurs et les gens de la tech : les choix de stack, les arbitrages, ce qui marche et ce qui reste à faire.</p>
         <dl class="rows">
           <div><dt class="mono">Métier</dt><dd>Développeur fullstack</dd></div>
           <div><dt class="mono">Basé à</dt><dd>Kinshasa</dd></div>
           <div><dt class="mono">Études</dt><dd>Programmation web, Teccart (Montréal)</dd></div>
-          <div><dt class="mono">Projet</dt><dd>JobSwipe, une appli de recherche d'emploi par swipe</dd></div>
+          <div><dt class="mono">Projets</dt><dd>JobSwipe (recherche d'emploi par swipe) et Loba (apprendre le lingala)</dd></div>
         </dl>
       </div>
     </div>
   </section>
 
-  <section id="projet" class="page">
-    <p class="label mono"><b class="rn" aria-hidden="true">II</b><span>Projet</span><i class="ln" aria-hidden="true"></i><i class="cd" aria-hidden="true">C02</i></p>
-    <div class="cols">
-      <div>
-        <h2>JobSwipe</h2>
-        <p>Chercher un emploi demande trop de clics, de filtres et de formulaires. JobSwipe réduit tout ça à un geste : on fait glisser une offre à droite pour postuler, à gauche pour passer.</p>
-        <div class="meter" role="img" aria-label="3 étapes sur 4 terminées"><i></i><i></i><i></i><i class="todo"></i></div>
-        <p class="mono muted" style="margin:10px 0 0">3 étapes sur 4 terminées</p>
-        <ul class="status">
-          <li><span>Design</span><span class="pill ok">Prêt</span></li>
-          <li><span>Fonctionnalités</span><span class="pill ok">Prêtes</span></li>
-          <li><span>Expérience utilisateur</span><span class="pill ok">Prête</span></li>
-          <li><span>Monétisation</span><span class="pill next">À venir</span></li>
-        </ul>
+  <section id="projets" class="page">
+    <p class="label mono"><b class="rn" aria-hidden="true">II</b><span>Projets</span><i class="ln" aria-hidden="true"></i><i class="cd" aria-hidden="true">C02</i></p>
+    <div class="phead">
+      <h2>Mes projets.</h2>
+      <div class="tabs" role="tablist" aria-label="Choisir un projet">
+        <button class="tab" role="tab" type="button" id="tab-jobswipe" aria-selected="true" aria-controls="pan-jobswipe">JobSwipe</button>
+        <button class="tab" role="tab" type="button" id="tab-loba" aria-selected="false" aria-controls="pan-loba" tabindex="-1">Loba</button>
       </div>
-      <div class="demo">
-        <p class="mono muted" style="margin:0">Essaie : offres d'exemple</p>
-        <div class="deck" id="deck" aria-live="polite"></div>
-        <div class="ctrls">
-          <button class="btn no" id="btnNo" type="button">← Passer</button>
-          <button class="btn yes" id="btnYes" type="button">Postuler →</button>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="pan-jobswipe" aria-labelledby="tab-jobswipe">
+      <div class="cols">
+        <div>
+          <h3 class="pname">JobSwipe</h3>
+          <p>Chercher un emploi demande trop de clics, de filtres et de formulaires. JobSwipe réduit tout ça à un geste : on fait glisser une offre à droite pour postuler, à gauche pour passer.</p>
+          <div class="meter" role="img" aria-label="3 étapes sur 4 terminées"><i></i><i></i><i></i><i class="todo"></i></div>
+          <p class="mono muted" style="margin:10px 0 0">3 étapes sur 4 terminées</p>
+          <ul class="status">
+            <li><span>Design</span><span class="pill ok">Prêt</span></li>
+            <li><span>Fonctionnalités</span><span class="pill ok">Prêtes</span></li>
+            <li><span>Expérience utilisateur</span><span class="pill ok">Prête</span></li>
+            <li><span>Monétisation</span><span class="pill next">À venir</span></li>
+          </ul>
         </div>
-        <p class="mono score" id="score">Postulé 0 · Passé 0</p>
+        <div class="demo">
+          <p class="mono muted" style="margin:0">Essaie : offres d'exemple</p>
+          <div class="deck" id="deck" aria-live="polite"></div>
+          <div class="ctrls">
+            <button class="btn no" id="btnNo" type="button">← Passer</button>
+            <button class="btn yes" id="btnYes" type="button">Postuler →</button>
+          </div>
+          <p class="mono score" id="score">Postulé 0 · Passé 0</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabpanel" role="tabpanel" id="pan-loba" aria-labelledby="tab-loba" hidden>
+      <div class="cols">
+        <div>
+          <h3 class="pname">Loba</h3>
+          <p>Loba est une application pour apprendre le lingala, façon Duolingo. Elle s'adresse en priorité à la diaspora congolaise.</p>
+          <p>« Loba » veut dire « parle ! » en lingala.</p>
+          <ul class="status">
+            <li><span>Lancé en</span><span class="pill ok">Novembre 2026</span></li>
+            <li><span>Code source</span><a class="pill ok" href="https://github.com/ChristopheMbadu/loba" target="_blank" rel="noopener">GitHub ↗</a></li>
+          </ul>
+        </div>
+        <div class="demo lesson" id="lesson">
+          <p class="mono muted" style="margin:0">Essaie : mini-leçon d'exemple</p>
+          <div class="lcard">
+            <div class="lbar" aria-hidden="true"><i id="lFill"></i></div>
+            <p class="mono muted" id="lStep" style="margin:0">Question 1 sur 6</p>
+            <p class="lq" id="lQ"></p>
+            <div class="lopts" id="lOpts" role="group" aria-label="Réponses"></div>
+            <p class="lfb" id="lFb" role="status" aria-live="polite"></p>
+            <button class="btn" id="lNext" type="button" hidden>Continuer</button>
+          </div>
+          <p class="mono score" id="lScore">Série 0 · XP 0</p>
+        </div>
       </div>
     </div>
   </section>
@@ -474,12 +479,13 @@ window.splitWords=function(h){
     </div>
   </section>
 
-  <section id="ecrits" class="page">
-    <p class="label mono"><b class="rn" aria-hidden="true">V</b><span>Écrits</span><i class="ln" aria-hidden="true"></i><i class="cd" aria-hidden="true">C05</i></p>
+  <section id="reseaux" class="page">
+    <p class="label mono"><b class="rn" aria-hidden="true">V</b><span>Réseaux</span><i class="ln" aria-hidden="true"></i><i class="cd" aria-hidden="true">C05</i></p>
     <div class="cols">
       <div>
-        <h2>Je publie sur LinkedIn.</h2>
-        <p>Des posts en français pour les développeurs et les gens de la tech. Je raconte JobSwipe pendant qu'il se construit : pourquoi ce choix technique, ce qui a été plus dur que prévu, ce qui vient ensuite.</p>
+        <h2>Je partage sur mes réseaux.</h2>
+        <p>Je publie sur LinkedIn, en français, pour les développeurs et les gens de la tech. Je raconte JobSwipe et Loba pendant qu'ils se construisent : pourquoi ce choix technique, ce qui a été plus dur que prévu, ce qui vient ensuite.</p>
+        <p>Le code, lui, vit sur <a href="https://github.com/ChristopheMbadu" target="_blank" rel="noopener">GitHub</a>.</p>
         <p class="muted">Ouvre le dossier et tire une feuille.</p>
       </div>
       <div class="folderwrap">
@@ -509,7 +515,7 @@ window.splitWords=function(h){
 
   <footer class="mono">
     <span>Christophe Mbadu</span>
-    <span>JobSwipe · Expo + Firebase</span>
+    <span>JobSwipe · Loba</span>
   </footer>
 </div>
 
@@ -524,8 +530,6 @@ window.splitWords=function(h){
 </div>
 <nav class="dots" id="dots" aria-label="Pages"></nav>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="laptop3d.js"></script>
 <script>
 /* Renseigne tes liens ici. Un lien vide n'est pas affiché. */
 var LINKS = { linkedin: 'https://www.linkedin.com/in/christophe-mbadu-b61179289/', github: 'https://github.com/ChristopheMbadu', email: 'mbaduchristophe@gmail.com' };
@@ -567,149 +571,172 @@ function lerp(a,b,t){return a+(b-a)*t}
   if(!any)document.getElementById('contactFallback').hidden=false;
 })();
 
-/* intro : ordinateur portable */
+/* intro : des mots dessinés avec des particules */
 (function(){
   var $=function(id){return document.getElementById(id)};
-  var track=$('track'), stage=$('stage'), bar=$('bar');
-  var cable=$('cable'), plug=$('plug'), spark=$('spark'), led=$('led'), brickLed=$('brickLed');
-  var batFill=$('batFill'), batTxt=$('batTxt'), batMsg=$('batMsg'), sBat=$('sBat'), sDesk=$('sDesk');
-  var lap=$('lap'), zoom=$('zoom'), svg=$('lapSvg');
-  var pupL=$('pupL'), pupR=$('pupR'), eyes=$('eyes'), mouth=$('mouth'), typed=$('typed'), phase=$('phase');
-  var syms=[$('y1'),$('y2'),$('y3'),$('y4')];
-  var SPEC=[[0.37,0.53,2.1,1.5,0],[0.61,0.35,1.6,2.3,.5],[0.43,0.27,2.5,1.3,1.1],[0.56,0.46,1.4,1.9,1.6]];
-  var TEXT='Salut, je suis Christophe.';
-  var prog=0, visible=true, look={x:0,y:0,at:-99}, blink=0, nextBlink=2, lastKey=0, keys=[], litUntil=[];
+  var track=$('track'), stage=$('stage'), bar=$('bar'), box=$('lapbox'), cv=$('wordCv'), phase=$('phase'), unit=$('unit'), win=$('wordIn');
+  var ctx=cv.getContext('2d');
+  var WORDS=['MBOTE','BONJOUR','HELLO','JOBSWIPE','LOBA'];
+  var UNITS=['Lingala','Français','English','JobSwipe','Loba','Ouvert'];
+  var PH=['Mbote · bonjour en lingala ↓','Bonjour · en français ↓','Hello · in English ↓','JobSwipe · l\'emploi en un geste ↓','Loba · le lingala en jouant ↓','Défiler pour ouvrir ↓'];
+  var FONT='"Geist","Avenir Next","Helvetica Neue",Arial,sans-serif';
+  var W=0,H=0,dpr=1,N=0,NMAX=1800;
+  var X,Y,VX,VY,SX,SY,RR;
+  var shapes=[], typedShape=null, typed='';
+  var prog=0, visible=true, raf=0, lastT=0, lastKey='', mx=-9999, my=-9999, curR=2;
+  var cBlue='#2438E8', cOrange='#F2661C', cInk='#15161A', colAt=0;
 
-  /* touches du clavier en perspective */
-  var kg=$('keys'), NS='http://www.w3.org/2000/svg';
-  for(var r=0;r<4;r++){
-    var y=360+r*8.6, k=60/42;
-    var xl=210-(y-354)*k+14, xr=670+(y-354)*k-14, n=14, gap=3, w=(xr-xl-(n-1)*gap)/n;
-    for(var c=0;c<n;c++){
-      var el=document.createElementNS(NS,'rect');
-      el.setAttribute('x',(xl+c*(w+gap)).toFixed(1));el.setAttribute('y',y.toFixed(1));
-      el.setAttribute('width',w.toFixed(1));el.setAttribute('height','5');el.setAttribute('rx','1.2');
-      el.setAttribute('class','key');kg.appendChild(el);keys.push(el);litUntil.push(0);
-    }
-  }
-
-  var unit=$('unit'), unitTxt='';
-  function setPhase(p){
-    phase.textContent=p<0.34?'Défiler pour brancher le chargeur ↓':p<0.62?'Branché · il se recharge ↓':p<0.88?'Réveillé · il s\'amuse ↓':'Défiler pour ouvrir ↓';
-    var u=p<0.34?'Batterie faible':p<0.62?'Charge en cours':p<0.88?'Éveillé':'Ouvert';
-    if(u!==unitTxt){unitTxt=u;unit.textContent=u;unit.setAttribute('data-s',p<0.34?'0':p<0.62?'1':p<0.88?'2':'3')}
-  }
+  function clamp01(v){return v<0?0:v>1?1:v}
   function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
-  function tri(u){return Math.abs(((u%2)+2)%2-1)}
 
-  function render(t){
-    var p=prog;
-    if(window.Lap3D&&Lap3D.active){
-      setPhase(p);
-      Lap3D.frame(p,t,look,REDUCE);return;
-    }
-    /* branchement */
-    var tc=ease(clamp((p-0.10)/0.24,0,1));
-    var bob=(!REDUCE&&p>0.66)?Math.sin(t*5)*2*clamp((p-0.66)/0.1,0,1):0;
-    lap.setAttribute('transform','translate(0 '+bob.toFixed(2)+')');
-    var tx=lerp(690,734,tc), ty=lerp(466,402,tc)+bob*tc;
-    var c2x=tx+50, c2y=ty+55*(1-tc);
-    cable.setAttribute('d','M792 447 C760 484 '+c2x.toFixed(1)+' '+(c2y+(1-tc)*10+14*tc).toFixed(1)+' '+c2x.toFixed(1)+' '+c2y.toFixed(1)+' L'+tx.toFixed(1)+' '+ty.toFixed(1));
-    var ang=Math.atan2(c2y-ty,c2x-tx)*180/Math.PI;
-    plug.setAttribute('transform','translate('+tx.toFixed(1)+' '+ty.toFixed(1)+') rotate('+ang.toFixed(1)+')');
-    /* étincelle */
-    var st=clamp((p-0.34)/0.08,0,1);
-    var so=(st>0&&st<1)?Math.sin(Math.PI*st):0;
-    spark.setAttribute('opacity',so.toFixed(2));
-    spark.setAttribute('transform','translate(731 '+(402+bob).toFixed(1)+') scale('+(0.6+so*0.9).toFixed(2)+')');
-    /* batterie */
-    var connected=p>=0.34;
-    var level=connected?lerp(0.03,1,clamp((p-0.36)/0.26,0,1)):0.03;
-    batFill.setAttribute('width',Math.max(6,94*level).toFixed(1));
-    var col=level<0.3?'fr':level<0.85?'fo':'fg';
-    batFill.setAttribute('class',col);
-    var low=!connected&&!REDUCE&&Math.sin(t*6)>0.2;
-    batFill.setAttribute('opacity',(!connected&&!REDUCE&&!low)?'0.35':'1');
-    var pct=Math.round(level*100);
-    batTxt.textContent=pct+' %';
-    batMsg.textContent=!connected?'Batterie faible':(level>=0.99?'Chargé':'Charge en cours');
-    led.setAttribute('class',!connected?'fr':(level>=0.99?'fg':'fo'));
-    brickLed.setAttribute('class',connected?(level>=0.99?'fg':'fo'):'fline');
-    /* scènes */
-    var fade=clamp((p-0.62)/0.06,0,1);
-    sBat.setAttribute('opacity',(1-fade).toFixed(2));
-    sDesk.setAttribute('opacity',fade.toFixed(2));
-    /* écran vivant */
-    var f=clamp((p-0.66)/0.1,0,1);
-    var n=Math.floor(clamp((p-0.66)/0.14,0,1)*TEXT.length);
-    typed.textContent=TEXT.slice(0,n)+((n<TEXT.length&&p>0.66)?'_':'');
-    var cy=lerp(54,84,f);
-    mouth.setAttribute('d','M-34 52 Q0 '+cy.toFixed(1)+' 34 52');
-    var lx,ly;
-    if(REDUCE||t-look.at<2.5){lx=look.x;ly=look.y}else{lx=Math.sin(t*1.3)*0.8;ly=Math.sin(t*0.9)*0.4}
-    pupL.setAttribute('cx',(-44+lx*9).toFixed(1));pupL.setAttribute('cy',(-4+ly*8).toFixed(1));
-    pupR.setAttribute('cx',(44+lx*9).toFixed(1));pupR.setAttribute('cy',(-4+ly*8).toFixed(1));
-    var k=1;
-    if(!REDUCE){
-      if(t>nextBlink){blink=t;nextBlink=t+2.4+Math.random()*2.4}
-      var bt=(t-blink)/0.16; if(bt>=0&&bt<1)k=1-0.92*Math.sin(Math.PI*bt);
-    }
-    eyes.setAttribute('transform','translate(0 -4) scale(1 '+k.toFixed(2)+') translate(0 4)');
-    for(var i=0;i<4;i++){
-      var s=SPEC[i], x=lerp(236,610,tri(t*s[0]+s[4])), y=lerp(100,262,tri(t*s[1]*1.3+s[4]*2));
-      if(REDUCE){x=lerp(240,600,s[0]);y=lerp(110,255,s[1])}
-      syms[i].setAttribute('x',x.toFixed(1));syms[i].setAttribute('y',y.toFixed(1));
-      syms[i].setAttribute('opacity',(f*0.85).toFixed(2));
-    }
-    /* touches qui s'allument */
-    if(!REDUCE&&p>0.62){
-      if(t-lastKey>0.09){
-        lastKey=t;var j=Math.floor(Math.random()*keys.length);
-        keys[j].setAttribute('class','key '+(Math.random()<.5?'lit':'lit2'));litUntil[j]=t+0.22;
+  /* échantillonne un mot : liste de points (x,y) à l'intérieur des lettres */
+  function sample(word){
+    var off=document.createElement('canvas');off.width=W;off.height=H;
+    var g=off.getContext('2d',{willReadFrequently:true});
+    var fs=Math.min(H*0.72,W*0.5);
+    g.font='700 '+fs+'px '+FONT;
+    var mw=g.measureText(word).width||1;
+    fs=Math.min(fs,fs*(W*0.9)/mw);
+    g.font='700 '+fs+'px '+FONT;g.textAlign='center';g.textBaseline='middle';g.fillStyle='#000';
+    g.fillText(word,W/2,H/2+fs*0.04);
+    var d=g.getImageData(0,0,W,H).data, step=Math.max(3,Math.round(fs/34)), out=[];
+    for(var y=step/2;y<H;y+=step){
+      for(var x=step/2;x<W;x+=step){
+        if(d[(((y|0)*W)+(x|0))*4+3]>140)out.push(x,y);
       }
-      for(var q=0;q<keys.length;q++){if(litUntil[q]&&t>litUntil[q]){keys[q].setAttribute('class','key');litUntil[q]=0}}
     }
-    /* zoom final */
-    var z=ease(clamp((p-0.88)/0.12,0,1));
-    var sc=1+1.5*z;
-    zoom.setAttribute('transform','translate(440 190) scale('+sc.toFixed(3)+') translate(-440 -190)');
-    svg.style.opacity=(1-clamp((z-0.45)/0.55,0,1)).toFixed(2);
-    /* légende */
-    setPhase(p);
+    var L=out.length/2, perm=new Int32Array(L);
+    for(var i=0;i<L;i++)perm[i]=i;
+    for(var k=L-1;k>0;k--){var j=(Math.random()*(k+1))|0,t=perm[k];perm[k]=perm[j];perm[j]=t}
+    return {pts:new Float32Array(out),perm:perm,L:L,r:Math.max(1.2,step*0.36)};
   }
 
-  var raf=0;
-  function tick(ts){raf=0;render(ts/1000);if(visible&&!REDUCE)raf=requestAnimationFrame(tick)}
-  function kick(){if(REDUCE){render(0)}else if(!raf&&visible){raf=requestAnimationFrame(tick)}}
-
-  function measure(){
-    var h=bar.offsetHeight;
-    document.documentElement.style.setProperty('--barh',h+'px');
+  function build(){
+    W=Math.max(80,box.clientWidth);H=Math.max(80,box.clientHeight);
+    dpr=Math.min(2,window.devicePixelRatio||1);
+    cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);
+    shapes=WORDS.map(sample);
+    typedShape=typed?sample(typed):null;
+    var m=0;shapes.forEach(function(s){if(s.L>m)m=s.L});
+    var n=Math.min(NMAX,m);
+    if(n!==N||!X){
+      var oX=X,oY=Y,old=N;
+      N=n;X=new Float32Array(N);Y=new Float32Array(N);VX=new Float32Array(N);VY=new Float32Array(N);SX=new Float32Array(N);SY=new Float32Array(N);RR=new Float32Array(N);
+      for(var i=0;i<N;i++){
+        X[i]=(i<old&&oX)?oX[i]:Math.random()*W;Y[i]=(i<old&&oY)?oY[i]:Math.random()*H;RR[i]=0.75+Math.random()*0.5;
+      }
+    }
+    for(var q=0;q<N;q++){SX[q]=Math.random()*W;SY[q]=Math.random()*H}
+    render(performance.now()/1000,0);
   }
+
+  function colors(){
+    var st=getComputedStyle(document.documentElement);
+    cBlue=st.getPropertyValue('--blue').trim()||cBlue;cOrange=st.getPropertyValue('--orange').trim()||cOrange;cInk=st.getPropertyValue('--ink').trim()||cInk;
+  }
+
+  function stageIdx(p){return p>=0.9?5:Math.min(4,Math.floor(p/0.18))}
+
+  function render(t,dt){
+    var si=stageIdx(prog), word=typedShape?typedShape:shapes[Math.min(si,4)];
+    if(!word)return;
+    var key=(typedShape?'t:'+typed:'w:'+Math.min(si,4));
+    if(key!==lastKey){
+      lastKey=key;
+      for(var i=0;i<N&&!REDUCE;i++){var a=Math.random()*6.2832,s=2+Math.random()*5;VX[i]+=Math.cos(a)*s;VY[i]+=Math.sin(a)*s}
+      var label=typedShape?'À toi':UNITS[si];
+      unit.textContent=label;unit.setAttribute('data-s',String(typedShape?1:si));
+      cv.setAttribute('aria-label','Animation : le mot '+(typed||WORDS[Math.min(si,4)])+' dessiné avec des points bleus et orange.');
+    }
+    var uIdx=typedShape?-1:si;
+    if(uIdx!==lastU){lastU=uIdx;if(!typedShape){phase.textContent=PH[si];unit.textContent=UNITS[si];unit.setAttribute('data-s',String(si))}}
+    if(typedShape&&lastU!==-1){lastU=-1}
+    if(typedShape)phase.textContent='Il dessine ce que tu écris ↓';
+    var z=typedShape?0:ease(clamp01((prog-0.9)/0.1));
+    var cx=W/2, cy=H/2, f=Math.min(2.5,dt*60), L=Math.min(word.L,N), P=word.pts, perm=word.perm;
+    curR+=(word.r-curR)*Math.min(1,0.12*f+0.001);
+    var R2=90*90, wob=t;
+    for(var k=0;k<N;k++){
+      var tx,ty;
+      if(k<L){var j=perm[k]*2;tx=P[j];ty=P[j+1]}
+      else{tx=SX[k]+Math.sin(wob*0.6+k)*18;ty=SY[k]+Math.cos(wob*0.5+k*1.3)*14}
+      if(z>0){tx=cx+(tx-cx)*(1+z*2.6);ty=cy+(ty-cy)*(1+z*2.6)}
+      if(REDUCE){X[k]=tx;Y[k]=ty;continue}
+      VX[k]+=(tx-X[k])*0.05*f;VY[k]+=(ty-Y[k])*0.05*f;
+      var dx=X[k]-mx, dy=Y[k]-my, d2=dx*dx+dy*dy;
+      if(d2<R2&&d2>0.01){var d=Math.sqrt(d2), fo=(1-d/90);fo=fo*fo*7*f;VX[k]+=dx/d*fo;VY[k]+=dy/d*fo}
+      var damp=Math.pow(0.84,f);VX[k]*=damp;VY[k]*=damp;
+      X[k]+=VX[k]*f;Y[k]+=VY[k]*f;
+    }
+    if(t-colAt>0.6){colAt=t;colors()}
+    ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
+    var pb=new Path2D(), po=new Path2D(), pe=new Path2D();
+    for(var m=0;m<N;m++){
+      var r=curR*RR[m]*(m>=L?0.7:1), path=(m>=L)?pe:(m%3===0?po:pb);
+      path.moveTo(X[m]+r,Y[m]);path.arc(X[m],Y[m],r,0,6.2832);
+    }
+    var al=1-clamp01(z*1.1);
+    ctx.globalAlpha=al;ctx.fillStyle=cBlue;ctx.fill(pb);ctx.fillStyle=cOrange;ctx.fill(po);
+    ctx.globalAlpha=al*0.28;ctx.fillStyle=cInk;ctx.fill(pe);ctx.globalAlpha=1;
+  }
+  var lastU=-2;
+
+  function tick(ts){
+    raf=0;
+    var t=ts/1000, dt=lastT?Math.min(0.05,t-lastT):0.016;lastT=t;
+    render(t,dt);
+    if(visible&&!REDUCE)raf=requestAnimationFrame(tick);
+  }
+  function kick(){
+    if(REDUCE){render(performance.now()/1000,0.016)}
+    else if(!raf&&visible){lastT=0;raf=requestAnimationFrame(tick)}
+  }
+
+  function measure(){document.documentElement.style.setProperty('--barh',bar.offsetHeight+'px')}
   function onScroll(){
-    var rect=track.getBoundingClientRect();
-    var stick=bar.offsetHeight;
-    var total=track.offsetHeight-stage.offsetHeight;
-    prog=clamp((stick-rect.top)/Math.max(total,1),0,1);
+    var rect=track.getBoundingClientRect(), stick=bar.offsetHeight, total=track.offsetHeight-stage.offsetHeight;
+    prog=Math.max(0,Math.min(1,(stick-rect.top)/Math.max(total,1)));
     var docH=document.documentElement.scrollHeight-window.innerHeight;
-    var pp=docH>0?clamp(window.scrollY/docH,0,1):0;
-    document.getElementById('pct').textContent=String(Math.round(pp*100)).padStart(3,'0');
+    var pp=docH>0?Math.max(0,Math.min(1,window.scrollY/docH)):0;
+    $('pct').textContent=String(Math.round(pp*100)).padStart(3,'0');
     kick();
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',function(){measure();onScroll()});
+
+  /* pointeur : repousse les points ; clic : onde de choc */
+  function local(e){var r=cv.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top}}
   window.addEventListener('pointermove',function(e){
-    var r=document.getElementById('lapbox').getBoundingClientRect();
-    var cx=r.left+r.width/2, cy=r.top+r.height*0.4;
-    look.x=clamp((e.clientX-cx)/(r.width/2),-1,1);
-    look.y=clamp((e.clientY-cy)/(r.height/2),-1,1);
-    look.at=performance.now()/1000;
+    var p=local(e);
+    if(p.x<-60||p.y<-60||p.x>W+60||p.y>H+60){mx=my=-9999;return}
+    mx=p.x;my=p.y;kick();
   },{passive:true});
+  cv.addEventListener('pointerleave',function(){mx=my=-9999});
+  cv.addEventListener('pointerdown',function(e){
+    var p=local(e);
+    for(var i=0;i<N;i++){
+      var dx=X[i]-p.x, dy=Y[i]-p.y, d=Math.sqrt(dx*dx+dy*dy)+0.01;
+      if(d<240){var s=(1-d/240)*16;VX[i]+=dx/d*s;VY[i]+=dy/d*s}
+    }
+    kick();
+  });
+
+  /* le visiteur écrit un mot, il se dessine */
+  win.addEventListener('input',function(){
+    typed=win.value.replace(/[^\p{L}\p{N}\- ]/gu,'').trim().toUpperCase().slice(0,10);
+    typedShape=typed?sample(typed):null;
+    lastKey='';lastU=-2;kick();
+  });
+  win.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key==='Escape'){if(e.key==='Escape'){win.value='';win.dispatchEvent(new Event('input'))}win.blur()}});
+
+  var rt=0;
+  function onResize(){clearTimeout(rt);rt=setTimeout(function(){measure();build();onScroll()},120)}
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onResize);
+  if(window.ResizeObserver)new ResizeObserver(onResize).observe(box);
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(en){visible=en[0].isIntersecting;if(visible)kick()},{threshold:0}).observe(stage);
   }
-  measure();onScroll();
-  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(function(){measure();onScroll()})}
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){build();kick()});
+  measure();build();onScroll();
 })();
 
 /* démo swipe */
@@ -1039,7 +1066,7 @@ function lerp(a,b,t){return a+(b-a)*t}
 (function(){
   var $=function(id){return document.getElementById(id)};
   document.documentElement.lang='fr';
-  var PAGES=[['apropos','À propos'],['projet','Projet'],['stack','Stack'],['langages','Langages'],['ecrits','Écrits'],['contact','Contact']];
+  var PAGES=[['apropos','À propos'],['projets','Projets'],['stack','Stack'],['langages','Langages'],['reseaux','Réseaux'],['contact','Contact']];
   var dots=$('dots'), prog=$('progress'), els=[], links=[];
   function go(id){var e=$(id);if(e)e.scrollIntoView({behavior:REDUCE?'auto':'smooth',block:'start'})}
   PAGES.forEach(function(pg,i){
@@ -1112,7 +1139,7 @@ function lerp(a,b,t){return a+(b-a)*t}
   }
 
   /* barre d'état : chapitre / scène / image */
-  var ids=['apropos','projet','stack','langages','ecrits','contact'].map($);
+  var ids=['apropos','projets','stack','langages','reseaux','contact'].map($);
   var track=$('track'), stage=$('stage'), bar=$('bar'), hc=$('hudc'), hw=$('hudw'), ht=$('hudt'), tk=false;
   function hud(){
     tk=false;
@@ -1268,6 +1295,99 @@ function lerp(a,b,t){return a+(b-a)*t}
   }
 })();
 
+/* Loba : mini-leçon d'exemple */
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var Q=[
+    {q:'Comment dit-on « bonjour » en lingala ?',a:'Mbote',d:['Matondi','Bolingo','Ndako'],n:'« Mbote » sert à dire bonjour.'},
+    {q:'Comment dit-on « merci » ?',a:'Matondi',d:['Mbote','Mai','Lipa'],n:'« Matondi » veut dire merci.'},
+    {q:'Que veut dire « ndako » ?',a:'La maison',d:['L\'eau','Le pain','L\'amour'],n:'« Ndako » : la maison.'},
+    {q:'Comment dit-on « eau » ?',a:'Mai',d:['Lipa','Ndako','Bolingo'],n:'« Mai » : l\'eau.'},
+    {q:'Que veut dire « bolingo » ?',a:'L\'amour',d:['La maison','Merci','Trois'],n:'« Bolingo » : l\'amour.'},
+    {q:'Comment dit-on « trois » ?',a:'Misato',d:['Moko','Mibale','Minei'],n:'On compte : moko, mibale, misato.'}
+  ];
+  var box=$('lesson');
+  if(!box)return;
+  var elQ=$('lQ'), elO=$('lOpts'), elF=$('lFb'), elN=$('lNext'), elS=$('lStep'), elP=$('lFill'), elSc=$('lScore');
+  var i=0, xp=0, streak=0, good=0, done=false;
+  function shuffle(a){a=a.slice();for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=a[k];a[k]=a[j];a[j]=t}return a}
+  function score(){elSc.textContent='Série '+streak+' · XP '+xp}
+  function show(){
+    done=false;
+    var it=Q[i];
+    elS.textContent='Question '+(i+1)+' sur '+Q.length;
+    elP.style.width=(i/Q.length*100)+'%';
+    elQ.textContent=it.q;elF.textContent='';elN.hidden=true;elN.textContent=(i===Q.length-1)?'Voir mon score':'Continuer';
+    elO.innerHTML='';
+    shuffle([it.a].concat(it.d)).forEach(function(opt){
+      var b=document.createElement('button');b.type='button';b.className='lopt';b.textContent=opt;
+      b.addEventListener('click',function(){pick(b,opt)});
+      elO.appendChild(b);
+    });
+  }
+  function pick(b,opt){
+    if(done)return;
+    done=true;
+    var it=Q[i], ok=(opt===it.a);
+    [].forEach.call(elO.children,function(x){
+      x.disabled=true;
+      if(x.textContent===it.a)x.classList.add('ok');
+    });
+    if(ok){good++;streak++;xp+=10;elF.textContent='Bravo ! +10 XP. '+it.n}
+    else{streak=0;b.classList.add('bad');elF.textContent='Presque. '+it.n}
+    elP.style.width=((i+1)/Q.length*100)+'%';
+    score();elN.hidden=false;elN.focus({preventScroll:true});
+  }
+  function end(){
+    elS.textContent='Leçon terminée';
+    elQ.textContent=good+' sur '+Q.length+(good===Q.length?' : parfait !':'');
+    elO.innerHTML='';
+    elF.textContent='XP gagnés : '+xp+'. Fais-la encore pour viser le sans-faute.';
+    elN.textContent='Recommencer';elN.hidden=false;i=Q.length;
+  }
+  elN.addEventListener('click',function(){
+    if(i>=Q.length){i=0;xp=0;streak=0;good=0;score();show();return}
+    if(i===Q.length-1){end();return}
+    i++;show();
+  });
+  score();show();
+})();
+
+/* projets : onglets JobSwipe / Loba */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  if(!tabs.length)return;
+  function sel(t,focus){
+    tabs.forEach(function(x){
+      var on=(x===t), p=document.getElementById(x.getAttribute('aria-controls'));
+      x.setAttribute('aria-selected',on?'true':'false');
+      x.tabIndex=on?0:-1;
+      if(p)p.hidden=!on;
+    });
+    if(focus)t.focus();
+    window.dispatchEvent(new Event('scroll'));
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){sel(t)});
+    t.addEventListener('keydown',function(e){
+      var k=e.key, j=-1;
+      if(k==='ArrowRight'||k==='ArrowDown')j=(i+1)%tabs.length;
+      else if(k==='ArrowLeft'||k==='ArrowUp')j=(i+tabs.length-1)%tabs.length;
+      else if(k==='Home')j=0;
+      else if(k==='End')j=tabs.length-1;
+      if(j>=0){e.preventDefault();sel(tabs[j],true)}
+    });
+  });
+  /* un lien direct vers #loba ouvre l'onglet Loba */
+  function fromHash(){
+    if(location.hash==='#loba'){
+      sel(document.getElementById('tab-loba'));
+      var s=document.getElementById('projets');if(s)s.scrollIntoView({block:'start'});
+    }
+  }
+  window.addEventListener('hashchange',fromHash);
+  fromHash();
+})();
 </script>
 
 </body>
