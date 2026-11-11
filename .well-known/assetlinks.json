@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.christophembadu.loba",
+        "sha256_cert_fingerprints": ["40:2F:FB:7D:85:D1:04:FC:21:C7:55:E2:BC:07:97:84:EA:FF:51:97:23:B0:36:7B:33:E8:38:E7:53:D4:A1:F1"]
+      }
+    }]
